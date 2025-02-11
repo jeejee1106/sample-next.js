@@ -16,7 +16,7 @@ export default function Other({data}) {
 export function getStaticProps({params}) {
   const data = {
     title : 'Other Page',
-    msg : '정적 속성 예제입니다람쥐.'
+    msg : '정적 속성 예제입니다람쥐.ddS'
   };
 
   return {
