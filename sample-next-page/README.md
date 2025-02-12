@@ -132,7 +132,23 @@ This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-appl
                         ```
                         </div>
                         </details>
+            - 위 SSG에 의한 정적 페이지도 서버 사이드 렌더링의 일종이지만, 이는 빌드 시점에 렌더링이 이루어지므로 실제로 클라이언트가 서버에 액세스할 때는 단순히 HTML코드만 반환한다.  
+            그러나 아래에서 설명할 동적 렌더링은 클라이언트가 액세스 할 때 서버 측에서 페이지를 렌더링하고 생성된 HTML코드를 반환한다. 액세스할 때 마다 렌더링 하므로, 이것이야말로 서버 사이드 렌더링이라고 할 수 있다.
             - 동적(dynamic) 렌더링 : 동적콘텐츠는 **클라이언트가 엑세스할 때 마다** 서버측에서 매번 렌더링된다.
+                - **getServerSideProps**
+                    - 이 함수는 클라이언트가 액세스하면 요청하마 호출된다. 그 후 가져온 값을 바탕으로 렌더링된다.
+
+                    <details>
+                    <summary>예시</summary>
+                    <div markdown="1">
+                    
+                    ```tsx
+                    export function getServerSideProps({params}) {
+                        //처리
+                        return 값;
+                    }
+                    ```
+
     - 앱 라우터
         - 서버 컨포넌트
             - 클라이언트쪽에서 동적으로 업데이트 되지 않는 것들을 다룸.

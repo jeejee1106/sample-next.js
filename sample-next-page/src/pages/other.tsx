@@ -1,7 +1,4 @@
-import { Inter } from 'next/font/google';
 import Link from 'next/link';
-
-const inter = Inter({subsets:['latin']});
 
 export default function Other({data}) {
   return(
@@ -13,10 +10,10 @@ export default function Other({data}) {
   );
 }
 
-export function getStaticProps({params}) {
+export function getStaticProps({}) {
   const data = {
     title : 'Other Page',
-    msg : '정적 속성 예제입니다람쥐.ddS'
+    msg : '정적 속성 예제입니다람쥐.'
   };
 
   return {

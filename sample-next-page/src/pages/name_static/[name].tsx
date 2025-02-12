@@ -1,14 +1,8 @@
-import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-const inter = Inter({ subsets: ['latin'] })
  
 export default function Name({data}) {
   const router = useRouter();
-  const { name } = router.query;
-  console.log("Client-side name:", name); // 🚀 디버깅용
-  
   return (
     <main>
       <h1>{data.title}</h1>
@@ -21,9 +15,9 @@ export default function Name({data}) {
 
 export function getStaticPaths() {
   const path = [
-    '/name/kim',
-    '/name/lee',
-    '/name/park'
+    '/name_static/kim',
+    '/name_static/lee',
+    '/name_static/park'
   ];
   return {
     paths:path,
